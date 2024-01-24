@@ -24,6 +24,7 @@ func main() {
 	}
 }
 
+// Creation of a layout
 func layout(g *gocui.Gui) error {
 	maxX, maxY := g.Size()
 	if v, err := g.SetView("left", 0, 0, maxX/2-1, maxY-1); err != nil {
@@ -44,6 +45,7 @@ func layout(g *gocui.Gui) error {
 	return nil
 }
 
+// Set a keybinding to quit the application
 func keybindings(g *gocui.Gui) error {
 	if err := g.SetKeybinding("", 'q', gocui.ModNone, quit); err != nil {
 		return err
@@ -51,6 +53,7 @@ func keybindings(g *gocui.Gui) error {
 	return nil
 }
 
+// Quit Function for key binding
 func quit(g *gocui.Gui, v *gocui.View) error {
 	return gocui.ErrQuit
 }
